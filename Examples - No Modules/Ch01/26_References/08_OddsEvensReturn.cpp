@@ -17,10 +17,10 @@ OddsAndEvens separateOddsAndEvens(const vector<int>& arr)
 {
 	vector<int> odds, evens;
 	for (int i : arr) {
-		if (i % 2 == 1) {
-			odds.push_back(i);
-		} else {
+		if (i % 2 == 0) {
 			evens.push_back(i);
+		} else {
+			odds.push_back(i);
 		}
 	}
 	return OddsAndEvens{ .odds = odds, .evens = evens };
@@ -28,7 +28,7 @@ OddsAndEvens separateOddsAndEvens(const vector<int>& arr)
 
 int main()
 {
-	vector<int> vecUnSplit{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	vector<int> vecUnSplit{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1, -2};
 	auto oddsAndEvens{ separateOddsAndEvens(vecUnSplit) };
 	printVec(oddsAndEvens.odds);
 	printVec(oddsAndEvens.evens);

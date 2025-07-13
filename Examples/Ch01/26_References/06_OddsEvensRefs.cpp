@@ -15,10 +15,10 @@ void separateOddsAndEvens(const int arr[], size_t size, int*& odds,
 {
 	numOdds = numEvens = 0;
 	for (size_t i{ 0 }; i < size; ++i) {
-		if (arr[i] % 2 == 1) {
-			++numOdds;
-		} else {
+		if (arr[i] % 2 == 0) {
 			++numEvens;
+		} else {
+			++numOdds;
 		}
 	}
 
@@ -27,17 +27,17 @@ void separateOddsAndEvens(const int arr[], size_t size, int*& odds,
 	
 	size_t oddsPos{ 0 }, evensPos{ 0 };
 	for (size_t i{ 0 }; i < size; ++i) {
-		if (arr[i] % 2 == 1) {
-			odds[oddsPos++] = arr[i];
-		} else {
+		if (arr[i] % 2 == 0) {
 			evens[evensPos++] = arr[i];
+		} else {
+			odds[oddsPos++] = arr[i];
 		}
 	}
 }
 
 int main()
 {
-	int unSplit[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	int unSplit[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1, -2 };
 	int* oddNums{ nullptr };
 	int* evenNums{ nullptr };
 	size_t numOdds{ 0 }, numEvens{ 0 };
