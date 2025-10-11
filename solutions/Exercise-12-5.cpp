@@ -20,7 +20,7 @@ auto concat(const T &t1, const U &u1)
 {
    std::string v;
 
-   if constexpr (std::same_as<decltype(t1), const std::string &>)
+   if constexpr (std::same_as<T, std::string>)
    {
       v += t1;
    }
@@ -29,7 +29,7 @@ auto concat(const T &t1, const U &u1)
       v += std::to_string(t1);
    }
 
-   if constexpr (std::same_as<decltype(u1), const std::string &>)
+   if constexpr (std::same_as<U, std::string>)
    {
       v += u1;
    }
